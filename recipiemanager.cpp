@@ -23,13 +23,18 @@ RecipieManager::RecipieManager()
                 new Vegetables("banana","2023/08/15","France"),
                                   };
 
-    std::string recipieKebab{"kebab"};
-    std::string recipieSimpleSalad{"simple salad"};
-    std::string recipieFruitSalad{"fruit salad"};
+//    std::string recipieKebab{"kebab"};
+//    std::string recipieSimpleSalad{"simple salad"};
+//    std::string recipieFruitSalad{"fruit salad"};
 
-    addRecipie(recipieKebab,kebab);
-    addRecipie(recipieSimpleSalad,simplesalad);
-    addRecipie(recipieFruitSalad,fruitsalad);
+//    addRecipie(recipieKebab,kebab);
+//    addRecipie(recipieSimpleSalad,simplesalad);
+//    addRecipie(recipieFruitSalad,fruitsalad);
+
+        addRecipie("kebab",kebab);
+        addRecipie("simple salad",simplesalad);
+        addRecipie("fruit salad",fruitsalad);
+
 
 }
 
@@ -46,7 +51,7 @@ void RecipieManager::findRecipieWithOneFood(std::string food){
         for(auto& f : foodList ){
             if(f->getName() == food){
                 std::cout << "With this food " << food
-                          << ", you can do a " << r->getName()
+                          << ", you can add this food in the recipie \"" << r->getName() << "\""
                           << std::endl;
             }
         }

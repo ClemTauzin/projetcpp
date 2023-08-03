@@ -15,7 +15,9 @@ protected:
     std::string origin;
 
 public:
-    Food(const std::string& _name, std::string _dlu, std::string _origin): name(_name), dlu(_dlu), origin(_origin){}
+    Food(const std::string& _name, std::string _dlu, std::string _origin)
+         : name(_name), dlu(_dlu), origin(_origin){}
+
     virtual ~Food() = default;
 
     std::string getName() const{
@@ -37,9 +39,14 @@ public:
         return tm;
     }
 
-    bool isDluOver(){
-    time_t now = time(0);
-    std::tm *localTime = localtime(&now);
+    /**
+     * @brief isDluOver : descrption of the method
+     * @return true if the dl is over ; false otherwise
+     */
+    bool isDluOver()
+    {
+        time_t now = time(0);
+        std::tm *localTime = localtime(&now);
         if (this->getDluTM().tm_year > localTime->tm_year){
             // is ok
             return false;
@@ -65,7 +72,7 @@ public:
             // c'est périmé
             return true;
         }
-    };
+    }
 
     bool isDluNear();
 };

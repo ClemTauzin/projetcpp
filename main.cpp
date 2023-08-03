@@ -1,3 +1,7 @@
+/**
+ * @brief Main firt
+ *
+ */
 #include <iostream>
 #include <string>
 #include <vector>
@@ -12,6 +16,8 @@
 
 #include "food.h"
 #include "frigo.h"
+
+#include "recipiemanager.h"
 
 int main(){
 
@@ -43,8 +49,15 @@ int main(){
     frigo.addFood(food3);
 
     frigo.displayAllFoods();
-
     std::cout << frigo << std::endl;
 
+
+
+    RecipieManager* recipieBook = new RecipieManager();
+    std::cout << *recipieBook << std::endl;
+
+    recipieBook->findRecipieWithOneFood("tomat");
+
+    delete(recipieBook);
     return 0;
 }
