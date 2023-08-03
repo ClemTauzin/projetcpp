@@ -8,4 +8,6 @@
 
 void archivageFrigo(Frigo* frigo);
 
+void fillFrigo(Frigo* frigo);
+
 #endif // ARCHIVAGE_H
