@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include <ctime>
+#include <iomanip>
+#include <sstream>
 
 class Food {
 
@@ -26,6 +29,45 @@ public:
     }
 
     virtual void displayInfo() = 0;
+
+    struct std::tm getDluTM(){
+        struct std::tm tm;
+        std::istringstream ss(this->dlu);
+        ss >> std::get_time(&tm, "%Y/%m/%d");
+        return tm;
+    }
+
+    bool isDluOver(){
+    time_t now = time(0);
+    std::tm *localTime = localtime(&now);
+        if (this->getDluTM().tm_year > localTime->tm_year){
+            // is ok
+            return false;
+        } else if(this->getDluTM().tm_year == localTime->tm_year){
+            // a vérifier
+            if (this->getDluTM().tm_mon > localTime->tm_mon){
+                // is ok
+                return false;
+            } else if (this->getDluTM().tm_mon == localTime->tm_mon){
+                // a vérifier
+                if (this->getDluTM().tm_mday > localTime->tm_mday){
+                    // is ok
+                    return false;
+                }else{
+                    // c'est périmé
+                    return true;
+            }
+            }else{
+                // c'est périmé
+                return true;
+            }
+        }else{
+            // c'est périmé
+            return true;
+        }
+    };
+
+    bool isDluNear();
 };
 
 #endif

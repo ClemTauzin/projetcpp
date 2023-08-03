@@ -1,21 +1,15 @@
+#############
+#  A FAIRE  #
+#############
+
 appli de recette de cuisine
 
-#define dateDuJour : a inclure pour connaitre vérifier la validité d'un aliment (facultatif)
+#define dateDuJour : suppression des éléments dont la dluo est dépassée
 
 Partie Gestion des aliments :
-    -> ajout d'aliment dans le frigo
-        pointeur/vecteur : frigo
-
-    -> class aliment (abstraite) :
-        - vegetebale
-            -DLU
-            -nom
-            -provenance
-        - meat  
-        - fruits
-
     -> fonction affichant les aliments qui vont se perdre bientot en entrant la date du jour
-    -> fonction permettant de voir tout ce qui est présent dans le frigo.
+        - avoir la date du jour
+        - comparer date avec attribut date (int ou string ??)
 
 #Partie création de recette :
 #    -> création d'objet classse recette :
@@ -29,3 +23,28 @@ Suppression des aliments du frigo quand la recette est créée ?
     installation biblio et fichier externe ?
     utilisation ansible ?
     action git ? log des recettes crées ?
+
+    DLUisOver à optimiser
+
+remplacement frigo -> boucle semantique ? constructeur de recopie + constructeur de mouvement
+
+************************************************************
+#############
+#  DONE  #
+#############
+
+Partie Gestion des aliments :
+    -> ajout d'aliment dans le frigo
+        pointeur/vecteur : frigo
+
+    -> class aliment (abstraite) :
+        - vegetebale
+            -DLU
+            -nom
+            -provenance
+        - meat  
+        - fruits
+
+-> fonction permettant de voir tout ce qui est présent dans le frigo.
+
+inclure une fonction DLU is over
