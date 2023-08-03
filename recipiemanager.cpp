@@ -58,3 +58,41 @@ void RecipieManager::findRecipieWithOneFood(std::string food){
     }
 }
 
+
+std::list<Recipie*> RecipieManager::getPossibleRecipies(std::vector<Food*> foodListInFridge) const
+{
+    std::list<Recipie*> possibleRecipies;
+
+    // We test each existing recipie
+    for(auto &recipie : recipies){
+        // I get the food list for this recipie
+        auto foodListInRecipie = recipie->getFoodList();
+        // I catch the number of ingredient in this recipie
+        int recipieFoodNumber = foodListInRecipie.size();
+        int recipieFoodCounter = 0;
+        // For each ingredient in the fridge, I test I it exists in this recipie
+        bool foundRecipie = false;
+        for(auto &foodInFridge : foodListInFridge){
+            // For each ingredient in this recipie
+            for(auto &foodInRecipie : foodListInRecipie){
+                if(foodInFridge->getName() == foodInRecipie->getName()){
+                    std::cout << "In recipie : " << recipie->getName()
+                              << ", found in fridge " << foodInFridge->getName()
+                              << " which can be top for this recipie..." << std::endl;
+                    recipieFoodCounter++;
+                }
+                // If we have all ingredient from the fridge to complete the recipie OK
+                if(recipieFoodCounter == recipieFoodNumber){
+                    std::cout << "For recipie : " << recipie->getName() << " : I have all ingredients !" << std::endl;
+                    possibleRecipies.push_back(recipie);
+                    foundRecipie = true;
+                    break;
+                }
+            }// end of : For each ingredient in this recipie
+            if(foundRecipie) break; // we have found a recipie, pass directly to other possible recipies
+        }// end of : For each ingredient in the fridge, I test I it exists in this recipie
+    } // end of : We test each existing recipie
+
+    return possibleRecipies;
+
+}

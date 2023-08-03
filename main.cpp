@@ -53,11 +53,25 @@ int main(){
 
 
 
-    RecipieManager* recipieBook = new RecipieManager();
-    std::cout << *recipieBook << std::endl;
+    RecipieManager* recipieManager = new RecipieManager();
+    std::cout << *recipieManager << std::endl;
 
-    recipieBook->findRecipieWithOneFood("tomat");
+    recipieManager->findRecipieWithOneFood("tomat");
 
-    delete(recipieBook);
+    std::vector<Food*> foodInFridge{new Vegetables("salad","2023/08/04","BZH"),
+                    new Fruit("tomat","2023/08/15","France"),
+                    new Vegetables("onion","2023/08/15","France"),
+                    new Fruit("peer","2023/08/15","Panam"),
+                    new Meat("kebab","2023/08/15","France"),
+                    new Meat("Magret","2023/08/15","Toulouse")
+                    };
+
+    std::list<Recipie*> possibleRecipies = recipieManager->getPossibleRecipies(foodInFridge);
+
+    for( auto r : possibleRecipies){
+        std::cout << "Possible recipie : " << r->getName() << std::endl;
+    }
+
+    delete(recipieManager);
     return 0;
 }

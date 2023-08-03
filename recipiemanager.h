@@ -74,6 +74,9 @@ public:
 
         return os;
     }
+
+
+    std::list<Recipie*> getPossibleRecipies(std::vector<Food*> foodList) const;
 };
 
 #endif // RECIPIEMANAGER_H
