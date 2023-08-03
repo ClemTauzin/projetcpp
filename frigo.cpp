@@ -11,6 +11,10 @@ void Frigo::displayAllFoods() {
     }
 }
 
+std::vector<Food*> Frigo::getFoods(){
+    return foods;
+};
+
 Frigo::~Frigo() {
     for(auto &f : foods) {
         delete f;
