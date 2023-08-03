@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 #include <vector>
 #include <ctime>
 #include <iomanip>
@@ -13,36 +13,39 @@
 #include "food.h"
 #include "frigo.h"
 
+#include "controller.h"
+
 int main(){
+    Controller controller;
+    Frigo* frigo = controller.initFrigo();
+    frigo->displayAllFoods();
 
-    // Recup today date
-    time_t now = time(0);
-    std::tm *localTime = localtime(&now);
+    char choix = '_';
+    while(choix != '0') {
+        std::string input = "";
+        /**********MENU**************/
+        std::cout << "Faire votre choix : " << std::endl;
+        std::cout << "1 - Afficher le contenu du frigo " << std::endl;
+        std::cout << "2 - Afficher les recettes " << std::endl;
+        std::cout << "3 -   " << std::endl;
+        std::cout << "0 - Quitter" << std::endl;
+        std::cin >> input;
+        choix = input[0];
 
-    Food* food1 = new Vegetables("Patate","2022/08/15","France");
-    Food* food2 = new Fruit("Poire","2023/08/16","Danemark");
-    Food* food3 = new Meat("Rumsteak","2023/07/15","Spain");
+        switch(choix) {
+            case 0:
+                break;
+            case 1:
+                controller.displayFrigo();
+                break;
+            case 2:
+                controller.displayRecette();
+                break;
+            default:
+                std::cout << "Choix non reconnu" << std::endl;
+        }
+    }
 
-
-    // std::vector<Food*> table;
-    // table.push_back(food1);
-    // table.push_back(food2);
-    // table.push_back(food3);
-
-    // for(auto &f : table){
-    //     f->displayInfo();
-    // }
-    // std::cout<<(food1->getDluTM()).tm_yday<<std::endl;
-    // std::cout<<(food2->getDluTM()).tm_yday<<std::endl;
-    std::cout<<std::boolalpha<<food1->isDluOver()<<std::endl;
-
-
-    Frigo frigo;
-    frigo.addFood(food1);
-    frigo.addFood(food2);
-    frigo.addFood(food3);
-
-    frigo.displayAllFoods();
 
     return 0;
 }
