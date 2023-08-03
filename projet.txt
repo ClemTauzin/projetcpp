@@ -1,5 +1,6 @@
 appli de recette de cuisine
 
+#define dateDuJour : a inclure pour connaitre vérifier la validité d'un aliment (facultatif)
 
 Partie Gestion des aliments :
     -> ajout d'aliment dans le frigo
