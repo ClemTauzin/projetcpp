@@ -10,8 +10,8 @@ private:
     Frigo* frigo;
 
 public:
-    Controller(Frigo* _frigo = nullptr): frigo(_frigo) {}
-
+    Controller(Frigo* _frigo): frigo(_frigo) {}
+    Controller() : frigo(nullptr){}
     Frigo* getFrigo() { return frigo;}
 
 
@@ -20,11 +20,11 @@ public:
         Initialisation de l'application.
         Chargement des aliments du frigo
     */
-    Frigo* initFrigo();
+    void initFrigo();
 
     void displayFrigo();
     void displayRecette();
-
+    void saveFrigo();
 
 
 };

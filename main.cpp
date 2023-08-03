@@ -16,9 +16,10 @@
 #include "controller.h"
 
 int main(){
+
+
     Controller controller;
-    Frigo* frigo = controller.initFrigo();
-    frigo->displayAllFoods();
+    controller.initFrigo();
 
     char choix = '_';
     while(choix != '0') {
@@ -33,12 +34,12 @@ int main(){
         choix = input[0];
 
         switch(choix) {
-            case 0:
+            case '0':
                 break;
-            case 1:
+            case '1':
                 controller.displayFrigo();
                 break;
-            case 2:
+            case '2':
                 controller.displayRecette();
                 break;
             default:
