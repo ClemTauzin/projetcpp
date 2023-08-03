@@ -44,5 +44,7 @@ int main(){
 
     frigo.displayAllFoods();
 
+    std::cout << frigo << std::endl;
+
     return 0;
 }

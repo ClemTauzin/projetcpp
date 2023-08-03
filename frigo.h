@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <ostream>
 #include "food.h"
 
 
@@ -17,8 +18,19 @@ class Frigo {
 
     void displayAllFoods();
 
+    // friend std::ostream& operator<<(std::ostream& os, const Frigo& frigo);
+
     ~Frigo();
 
+    friend std::ostream& operator <<(std::ostream& os, const Frigo& frigo)
+    {
+
+        for(auto &f : frigo.foods) {
+            os << f->getName() << " ; " << f->getDlu()<< " ; " << f->getOrigin() << "\n";
+        }
+
+        return os;
+    }
 
 };
 

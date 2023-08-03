@@ -10,6 +10,19 @@ void Frigo::displayAllFoods() {
         f->displayInfo();
     }
 }
+/*
+ * std::string getName() const{
+        return name;
+    }
+    std::string getDlu() const{
+        return dlu;
+    }
+    std::string getOrigin() const{
+        return origin;
+    }
+
+ *
+ */
 
 Frigo::~Frigo() {
     for(auto &f : foods) {
