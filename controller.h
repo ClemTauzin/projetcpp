@@ -23,7 +23,7 @@ public:
     void initFrigo();
 
     void displayFrigo();
-    void displayRecette();
+    void displayReceip();
     void saveFrigo();
 
 

@@ -40,7 +40,7 @@ int main(){
                 controller.displayFrigo();
                 break;
             case '2':
-                controller.displayRecette();
+                controller.displayReceip();
                 break;
             default:
                 std::cout << "Choix non reconnu" << std::endl;

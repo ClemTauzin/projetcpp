@@ -16,7 +16,7 @@ void Controller::displayFrigo() {
     frigo->displayAllFoods();
 }
 
-void Controller::displayRecette() {
+void Controller::displayReceip() {
     std::cout << "EN ATTENTE DES RECETTES" << std::endl;
 }
 
