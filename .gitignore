@@ -1,0 +1,7 @@
+*.o
+*.pro*
+*.qmake.cache
+Makefile
+projetcpp
+a.*
+.DS_Store

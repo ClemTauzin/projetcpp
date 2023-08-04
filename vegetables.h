@@ -1,3 +1,7 @@
+/**
+ * \brief Vegetables class - concretisation of abstract Food pure virtual class
+ */
+
 #ifndef VEGETABLES_H
 #define VEGETABLES_H
 

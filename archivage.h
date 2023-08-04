@@ -1,3 +1,7 @@
+/**
+ * @brief Archivage File - Manage file recording to allow a data base of foods
+ */
+
 #ifndef ARCHIVAGE_H
 #define ARCHIVAGE_H
 

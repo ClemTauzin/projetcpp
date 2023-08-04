@@ -1,3 +1,7 @@
+/**
+ * @brief File food Abstract class for concretisation of Vegetables, Fruit, Meat
+ */
+
 #ifndef FOOD_H
 #define FOOD_H
 
@@ -10,13 +14,11 @@
 class Food {
 
 private:
-    /*
-    Schema des dates : 
-    String date => struct tm => time_t (type long)
-    */
+
     struct std::tm getDluTM();
 
     time_t getDluTimeT();
+
 
     time_t getDateSystem(int nbDayBefore = 0);
 
@@ -44,15 +46,6 @@ public:
     bool isFoodExpired(time_t tfood, time_t tSystem);
 
     bool isDluOver();
-
-    bool compareDlu(time_t tfood, time_t tSystem) {
-        double diff = difftime(tfood, tSystem);
-        if (diff <= 0) {
-            return true;
-        }
-        return false;
-    }
-
 
     bool isDluNear();
 };

@@ -1,3 +1,7 @@
+/**
+ * \brief Meat class - concretisation of abstract Food pure virtual class
+ */
+
 #ifndef MEAT_H
 #define MEAT_H
 

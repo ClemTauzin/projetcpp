@@ -1,11 +1,11 @@
 #include "recipiemanager.h"
 
 
-
-
+/**
+ * @brief Constructor for the RecipeManager
+ */
 RecipieManager::RecipieManager()
 {
-
     std::vector<Food*> kebab{new Vegetables("Salad","2023/08/04","France"),
                 new Fruit("Tomato","2023/08/15","France"),
                 new Vegetables("Onion","2023/08/15","France"),
@@ -23,21 +23,18 @@ RecipieManager::RecipieManager()
                 new Vegetables("Banana","2023/08/15","France"),
                                   };
 
-//    std::string recipieKebab{"kebab"};
-//    std::string recipieSimpleSalad{"simple salad"};
-//    std::string recipieFruitSalad{"fruit salad"};
 
-//    addRecipie(recipieKebab,kebab);
-//    addRecipie(recipieSimpleSalad,simplesalad);
-//    addRecipie(recipieFruitSalad,fruitsalad);
-
-        addRecipie("kebab",kebab);
-        addRecipie("simple salad",simplesalad);
-        addRecipie("fruit salad",fruitsalad);
-
+    addRecipie("kebab",kebab);
+    addRecipie("simple salad",simplesalad);
+    addRecipie("fruit salad",fruitsalad);
 
 }
 
+/**
+ * @brief Add a new recipe in the recipe book (database)
+ * @param name
+ * @param recipieListFood
+ */
 void RecipieManager::addRecipie(std::string name,
                                 std::vector<Food*> recipieListFood)
 {
@@ -45,6 +42,10 @@ void RecipieManager::addRecipie(std::string name,
 }
 
 
+/**
+ * @brief Test method : find a recipie wich contains at least this food (as a std::string)
+ * @param food
+ */
 void RecipieManager::findRecipieWithOneFood(std::string food){
     for(auto& r : recipies){
         auto foodList = r->getFoodList();
@@ -60,6 +61,11 @@ void RecipieManager::findRecipieWithOneFood(std::string food){
 }
 
 
+/**
+ * @brief RecipieManager::getPossibleRecipies
+ * @param foodListInFridge The list of foods (in the fridge) as a std::vector<Food*>
+ * @return The list of possible recipe with the given list of foods
+ */
 std::list<Recipie*> RecipieManager::getPossibleRecipies(std::vector<Food*> foodListInFridge) const
 {
     std::list<Recipie*> possibleRecipies;

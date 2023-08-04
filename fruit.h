@@ -1,8 +1,5 @@
 /**
- * \brief header of fruit
- * \authors Moi toi
- * \date 2023/08/03
- * Commentaires classiques
+ * \brief Fruit class - concretisation of abstract Food pure virtual class
  */
 
 #ifndef FRUIT_H
@@ -11,17 +8,14 @@
 #include "food.h"
 
 
- //! Doxygen command in down @brief The Fruit class
+/**
+ * @brief Definition of the fruit class
+ */
 class Fruit : public Food
 {
 public:
 
-    /**
-     * @brief Fruit Constructor of frut ==> Doxygen (in .cpp)
-     * @param _name name of fruit description
-     * @param _dlu limit time of consumation
-     * @param _origin origin
-     */
+
     Fruit(const std::string& _name, std::string _dlu, std::string _origin);
 
     /**

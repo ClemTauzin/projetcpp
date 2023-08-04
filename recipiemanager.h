@@ -12,7 +12,7 @@
 
 
 /**
- * @brief The Recipie struct
+ * @brief The Recipie struct - A wrapper for the vector - add a name for a recipe
  */
 struct Recipie{
     std::vector<Food*> foodList;
@@ -21,9 +21,17 @@ struct Recipie{
     Recipie(std::string name, std::vector<Food*> foodList)
         :name(name),foodList(foodList){}
 
+    /**
+     * @brief getFoodList
+     * @return the food list as a std::vector<Food*> from one recipe
+     */
     std::vector<Food*> getFoodList(){
         return foodList;
     }
+    /**
+     * @brief getName
+     * @return the name of the recipe as a std::string
+     */
     std::string getName(){
         return name;
     }
@@ -47,14 +55,14 @@ public:
 
 
 //using Recipie = std::vector<Food *>;
-
+/**
+ * @brief The RecipieManager class - Manage all recipe and be able to find a recipe corresponding to a list of foods
+ */
 class RecipieManager
 {
     // std::map<std::string,std::list<Food*>> recipies;
-    /**
-     * @brief recipies
-     */
-    std::list<Recipie*> recipies;
+
+    std::list<Recipie*> recipies;   //!< All recipies
     // std::list<VectorNameWrapper<Food>*> recipies; // test with wrapper
 
 public:
@@ -65,10 +73,9 @@ public:
 
     void findRecipieWithOneFood(std::string food);
 
-
+    //! output stream operator ro display all possible recipe to make
     friend std::ostream& operator <<(std::ostream& os, const RecipieManager& rm)
     {
-
         // for each recipie in the list
         for(auto &r : rm.recipies) {
             // I print the recipie name
@@ -80,10 +87,8 @@ public:
             }
             os << "\n";
         }
-
         return os;
     }
-
 
     std::list<Recipie*> getPossibleRecipies(std::vector<Food*> foodList) const;
 };
