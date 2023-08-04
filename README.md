@@ -4,6 +4,8 @@
  @authors  Jia Jiunn Huynh - Olivier Wafflard - Clement Tauzin
  @date 2023/08/04
 
+**Utilisation de github** : https://github.com/ClemTauzin/projetcpp
+- Utilisation des branches pour le développement
 ********************************************************
 Contexte :
 Vous allez devoir imaginer un contexte pertinent dans lequel vous allez mettre en place une application en C++ avec les mécanismes d'installation de bibliothèque et les fichiers externes. Dans le programme que vous allez construire, vous aurez deux jours pour penser aux mécanismes qui seront les plus pertinents. Vous êtes libre d'utiliser les moyens dont vous disposez. Le seul prérequis est le fait d'utiliser tout ce que vous avez abordé. Après cela, il faudra créer une documentation pour présenter votre application, son rôle et les évolutions futures auxquelles vous aurez pensé. Tous les choix doivent être pertinents.
@@ -11,7 +13,7 @@ Vous allez devoir imaginer un contexte pertinent dans lequel vous allez mettre e
 *********************************************************
 
 ## @version 1.0 :
-- L'aplication charge les aliments du fichier sauvegardé lors du démarrage, tout en prenant soin d'éliminer les aliments périmés, et sauvegarde le contenu du frigo lors de la fermeture de l'application
+- L'application charge les aliments du fichier sauvegardé lors du démarrage, tout en prenant soin d'éliminer les aliments périmés, et sauvegarde le contenu du frigo lors de la fermeture de l'application
 - l'utilisateur se voit proposé 
     + d'afficher les aliments contenus dans le frigo
     + d'afficher les recettes réalisables à partir des aliments contenus dans le frigo
