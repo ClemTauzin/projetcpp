@@ -63,11 +63,9 @@ int main(){
         std::cout << "Possible recipie : " << r->getName() << std::endl;
     }
 
-<<<<<<< HEAD
+
     delete(recipieManager);
-=======
     // archivageFrigo(&frigo);
 
->>>>>>> 1b762ceaffd120ae25a210759c43849bc3a33093
     return 0;
 }
