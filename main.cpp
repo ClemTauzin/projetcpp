@@ -69,6 +69,7 @@ int main(){
 
     Controller controller;
     controller.createFrigo();
+    controller.createRecipieManager();
 
     char choix = '_';
     while(choix != '0') {
@@ -94,6 +95,8 @@ int main(){
             case '2':
                 controller.displayReceip();
                 break;
+            case '3':
+                controller.displayFoodNearExpire();
             case '4':
                 std::cout << "\nFaites votre choix : " << std::endl;
                 std::cout << "1 - Ajouter un aliment dans le frigo " << std::endl;

@@ -6,21 +6,21 @@
 RecipieManager::RecipieManager()
 {
 
-    std::vector<Food*> kebab{new Vegetables("salad","2023/08/04","France"),
-                new Fruit("tomat","2023/08/15","France"),
-                new Vegetables("onion","2023/08/15","France"),
-                new Meat("kebab","2023/08/15","France")};
+    std::vector<Food*> kebab{new Vegetables("Salad","2023/08/04","France"),
+                new Fruit("Tomato","2023/08/15","France"),
+                new Vegetables("Onion","2023/08/15","France"),
+                new Meat("Kebab","2023/08/15","France")};
 
 
-    std::vector<Food*> simplesalad{new Vegetables("salad","2023/08/04","France"),
-                new Fruit("tomat","2023/08/15","France"),
-                new Vegetables("onion","2023/08/15","France"),
+    std::vector<Food*> simplesalad{new Vegetables("Salad","2023/08/04","France"),
+                new Fruit("Tomato","2023/08/15","France"),
+                new Vegetables("Onion","2023/08/15","France"),
                 };
 
 
-    std::vector<Food*> fruitsalad{new Vegetables("apple","2023/08/04","France"),
-                new Fruit("peer","2023/08/15","France"),
-                new Vegetables("banana","2023/08/15","France"),
+    std::vector<Food*> fruitsalad{new Vegetables("Apple","2023/08/04","France"),
+                new Fruit("Peer","2023/08/15","France"),
+                new Vegetables("Banana","2023/08/15","France"),
                                   };
 
 //    std::string recipieKebab{"kebab"};
@@ -63,7 +63,6 @@ void RecipieManager::findRecipieWithOneFood(std::string food){
 std::list<Recipie*> RecipieManager::getPossibleRecipies(std::vector<Food*> foodListInFridge) const
 {
     std::list<Recipie*> possibleRecipies;
-
     // We test each existing recipie
     for(auto &recipie : recipies){
         // I get the food list for this recipie
