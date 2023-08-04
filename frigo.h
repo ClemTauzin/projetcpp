@@ -18,6 +18,8 @@ class Frigo {
 
     void displayAllFoods();
 
+    void removeFood(int index);
+
     std::vector<Food*> getFoods();
 
     ~Frigo();

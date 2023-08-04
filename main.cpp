@@ -117,6 +117,8 @@ int main(){
                             break;
                         case '2':
                         // Supprimer un aliment
+                            controller.addLessFood();
+                            break;
                         default:
                             std::cout << "Choix non reconnu" << std::endl;
                     }

@@ -7,10 +7,21 @@ void Frigo::addFood(Food* aFood) {
 
 void Frigo::displayAllFoods() {
     std::cout<<"\nVotre frigo contient les produits suivants :"<<std::endl;
+    int i=0;
     for(auto &f : foods) {
+        i++;
+        std::cout<<i;
         f->displayInfo();
     }
 }
+
+    void Frigo::removeFood(int index){
+        delete foods[index];
+        foods.erase(foods.begin() + index);
+    };
+
+
+
 /*
  * std::string getName() const{
         return name;

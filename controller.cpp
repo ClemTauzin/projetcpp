@@ -33,14 +33,13 @@ void Controller::displayFoodNearExpire() {
 
 void Controller::saveFrigo() {
     std::cout << "EN ATTENTE SAUVEGARDE" << std::endl;
-    // archivageFrigo(frigo);
+    archivageFrigo(frigo);
 }
 
 void Controller::addMoreFood(){
      // Saisie de la classe
     std::cout<<"A quelle catégorie appartient l'aliment ?\n"<<"1 -> Vegetables\n"<<"2 -> Meat\n"<<"3 -> Fruit\n"<<std::endl;
     int in_class = 0;
-    // std::getline(std::cin, in_class);
     std::cin>>in_class;
     std::cin.clear();
     std::cin.ignore();
@@ -48,19 +47,16 @@ void Controller::addMoreFood(){
     // Saisie du nom
     std::cout<<"Quel est le nom de l'aliment ?"<<std::endl;
     std::string in_name = "";
-    // std::cin>>in_name;
     std::getline(std::cin, in_name);
 
     // Saisie de la DLU
     std::cout<<"Quel est la date de péremption de l'aliment (format aaaa/mm/jj) ?"<<std::endl;
     std::string in_dlu ="";
-    // std::cin>>in_dlu;
     std::getline(std::cin, in_dlu);
 
     // Saisie de la provenance
     std::cout<<"Quel est la provenance de l'aliment ?"<<std::endl;
     std::string in_origin ="";
-    // std::cin>>in_origin;
     std::getline(std::cin, in_origin);
 
     // Création de l'objet
@@ -77,10 +73,19 @@ void Controller::addMoreFood(){
     frigo->addFood(food);
 }
 
+void Controller::addLessFood(){
+
+    displayFrigo();
+std::cout<<"\nQuel aliment de la liste souhaitez vous supprimer ?"<<std::endl;
+    int index = 0;
+    std::cin>>index;
+    std::cin.clear();
+    std::cin.ignore();
+    index-=1;
+    frigo->removeFood(index);
+}
+
+
 Controller::~Controller() {
-    for(auto f : frigo->getFoods()) {
-        delete f;
-    }
-    frigo->getFoods().clear();
     delete frigo;
 }

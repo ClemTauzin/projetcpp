@@ -34,6 +34,7 @@ public:
     void displayFoodNearExpire();
     void saveFrigo();
     void addMoreFood();
+    void addLessFood();
 
     ~Controller();
 };
