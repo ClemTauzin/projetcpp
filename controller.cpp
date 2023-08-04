@@ -40,21 +40,27 @@ void Controller::addMoreFood(){
      // Saisie de la classe
     std::cout<<"A quelle catégorie appartient l'aliment ?\n"<<"1 -> Vegetables\n"<<"2 -> Meat\n"<<"3 -> Fruit\n"<<std::endl;
     int in_class = 0;
+    // std::getline(std::cin, in_class);
     std::cin>>in_class;
+    std::cin.clear();
+    std::cin.ignore();
 
     // Saisie du nom
     std::cout<<"Quel est le nom de l'aliment ?"<<std::endl;
-    std::string in_name;
+    std::string in_name = "";
+    // std::cin>>in_name;
     std::getline(std::cin, in_name);
 
     // Saisie de la DLU
-    std::cout<<"Quel est la date de péremption de l'aliment (format aaa/mm/jj) ?"<<std::endl;
-    std::string in_dlu;
+    std::cout<<"Quel est la date de péremption de l'aliment (format aaaa/mm/jj) ?"<<std::endl;
+    std::string in_dlu ="";
+    // std::cin>>in_dlu;
     std::getline(std::cin, in_dlu);
 
     // Saisie de la provenance
     std::cout<<"Quel est la provenance de l'aliment ?"<<std::endl;
-    std::string in_origin;
+    std::string in_origin ="";
+    // std::cin>>in_origin;
     std::getline(std::cin, in_origin);
 
     // Création de l'objet

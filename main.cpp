@@ -72,8 +72,11 @@ int main(){
     controller.createRecipieManager();
 
     char choix = '_';
+    char choix2 = '_';
     while(choix != '0') {
         std::string input = "";
+        std::string input2 = "";
+
         /**********MENU**************/
         std::cout << "\nFaites votre choix : " << std::endl;
         std::cout << "1 - Afficher le contenu du frigo " << std::endl;
@@ -97,12 +100,15 @@ int main(){
                 break;
             case '3':
                 controller.displayFoodNearExpire();
+                break;
             case '4':
                 std::cout << "\nFaites votre choix : " << std::endl;
                 std::cout << "1 - Ajouter un aliment dans le frigo " << std::endl;
                 std::cout << "2 - Supprimer un aliment du frigo" << std::endl;
                 std::cout << "0 - Abandonner" << std::endl;
-                    switch(choix) {
+                std::cin >> input2;
+                choix2 = input2[0];
+                    switch(choix2) {
                         case '0':
                             break;
                         case '1':

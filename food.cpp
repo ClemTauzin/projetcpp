@@ -48,7 +48,6 @@ bool  Food::isFoodExpired(time_t tfood, time_t tSystem) {
 
 
 bool  Food::isDluNear() {
-    std::cout << this->getName() << std::endl;
     time_t timeSystem3 = getDateSystem(4);
     time_t timeSystemNow = getDateSystem(); 
 
