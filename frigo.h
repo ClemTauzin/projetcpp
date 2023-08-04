@@ -18,7 +18,7 @@ class Frigo {
 
     void displayAllFoods();
 
-    // friend std::ostream& operator<<(std::ostream& os, const Frigo& frigo);
+    std::vector<Food*> getFoods();
 
     ~Frigo();
 

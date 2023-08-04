@@ -28,6 +28,11 @@ Suppression des aliments du frigo quand la recette est créée ?
 
 remplacement frigo -> boucle semantique ? constructeur de recopie + constructeur de mouvement
 
+aprem :
+finir doc olivier
+fusion des branch
+doxygene
+
 ************************************************************
 #############
 #  DONE  #
