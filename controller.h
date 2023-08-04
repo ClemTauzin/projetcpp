@@ -8,15 +8,18 @@
 #include "fruit.h"
 #include "meat.h"
 #include "archivage.h"
+#include "recipiemanager.h"
 
 class Controller {
 private:
     Frigo* frigo;
+    RecipieManager* recipieManager;
 
 public:
-    Controller(Frigo* _frigo): frigo(_frigo) {}
-    Controller() : frigo(nullptr){}
+    Controller(Frigo* _frigo, RecipieManager* _recipieManager): frigo(_frigo), recipieManager(_recipieManager) {}
+    Controller() : frigo(nullptr), recipieManager(nullptr) {}
     Frigo* getFrigo() { return frigo;}
+    RecipieManager* getRecipieManager() { return recipieManager;}
 
 
 
@@ -25,7 +28,7 @@ public:
         Chargement des aliments du frigo
     */
     void createFrigo();
-
+    void createRecipieManager();
     void displayFrigo();
     void displayReceip();
     void displayFoodNearExpire();

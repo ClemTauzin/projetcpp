@@ -70,6 +70,7 @@ int main(){
 
     Controller controller;
     controller.createFrigo();
+    controller.createRecipieManager();
 
     char choix = '_';
     while(choix != '0') {

@@ -6,12 +6,20 @@ void Controller::createFrigo() {
     fillFrigo(frigo);
 }
 
+void Controller::createRecipieManager() {
+    recipieManager = new RecipieManager();
+}
+
 void Controller::displayFrigo() {
     frigo->displayAllFoods();
 }
 
 void Controller::displayReceip() {
-    std::cout << "EN ATTENTE DES RECETTES" << std::endl;
+    std::list<Recipie*> possibleRecipies = recipieManager->getPossibleRecipies(frigo->getFoods());
+
+    for( auto r : possibleRecipies){
+        std::cout << "Possible recipie : " << r->getName() << std::endl;
+    }
 }
 
 void Controller::displayFoodNearExpire() {
