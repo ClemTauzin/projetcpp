@@ -93,5 +93,6 @@ while (std::getline (stream,line,';'))
         frigo->addFood(i);
     }
 }
+    stream.close();
     std::cout<<"--- Frigo food successfully filled ---"<<std::endl;
 }
