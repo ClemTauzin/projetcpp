@@ -29,6 +29,7 @@ public:
     void displayFrigo();
     void displayReceip();
     void saveFrigo();
+    void addMoreFood();
 
     ~Controller();
 };

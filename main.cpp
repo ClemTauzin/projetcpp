@@ -67,7 +67,6 @@ void test() {
 
 int main(){
 
-
     Controller controller;
     controller.createFrigo();
 
@@ -96,8 +95,22 @@ int main(){
                 controller.displayReceip();
                 break;
             case '4':
-                // Ajouter un aliment
-                // Supprimer un aliment
+                std::cout << "\nFaites votre choix : " << std::endl;
+                std::cout << "1 - Ajouter un aliment dans le frigo " << std::endl;
+                std::cout << "2 - Supprimer un aliment du frigo" << std::endl;
+                std::cout << "0 - Abandonner" << std::endl;
+                    switch(choix) {
+                        case '0':
+                            break;
+                        case '1':
+                        // Ajouter un aliment
+                            controller.addMoreFood();
+                            break;
+                        case '2':
+                        // Supprimer un aliment
+                        default:
+                            std::cout << "Choix non reconnu" << std::endl;
+                    }
                 break;
             // case '5':
             //     Choisir la recette
