@@ -56,7 +56,7 @@ public:
         tm_system->tm_hour = 0;
         tm_system->tm_min = 0;
         tm_system->tm_sec = 0;
-        tm_system->tm_mday -= nbDayBefore;
+        tm_system->tm_mday += nbDayBefore;
 
         return mktime(tm_system);
     }
@@ -83,10 +83,10 @@ public:
 
 
     bool isDluNear() {
-        time_t timeSystem = getDateSystem(3);
-        struct std::tm* tSystem = localtime(&timeSystem);   
+        time_t timeSystem3 = getDateSystem(3);
+        time_t timeSystemNow = getDateSystem(); 
 
-        return compareDlu(getDluTimeT(), timeSystem);
+        return compareDlu(getDluTimeT(), timeSystemNow) && !compareDlu(getDluTimeT(), timeSystem3);
     };
 };
 
