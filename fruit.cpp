@@ -15,5 +15,5 @@ Fruit::Fruit(const std::string& _name, std::string _dlu, std::string _origin)
 
 //!
 void Fruit::displayInfo(){
-    std::cout << "name: " << name << " dlu:" << dlu << " origin " << origin << std::endl;
+    std::cout << "-> Name : " << name << " - dlu : " << dlu << " - origin : " << origin << std::endl;
 }

@@ -6,5 +6,5 @@ Vegetables::Vegetables(const std::string& _name, std::string _dlu, std::string _
     : Food(_name,_dlu,_origin){}
 
 void Vegetables::displayInfo(){
-    std::cout << "name: " << name << " dlu:" << dlu << " origin " << origin << std::endl;
+    std::cout << "-> Name : " << name << " - dlu : " << dlu << " - origin : " << origin << std::endl;
 }

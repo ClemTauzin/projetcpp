@@ -45,8 +45,29 @@ public:
 
     bool isFoodExpired(time_t tfood, time_t tSystem);
 
+    bool isDluOver() {
+        // Récupération en tm de la date système
+        time_t tnow = getDateSystem();
+        
+        time_t tfood = getDluTimeT();
+        return compareDlu(tfood, tnow);
+    }
 
-    bool isDluNear();
+    bool compareDlu(time_t tfood, time_t tSystem) {
+        double diff = difftime(tfood, tSystem);
+        if (diff <= 0) {
+            return true;
+        }
+        return false;
+    }
+
+
+    bool isDluNear() {
+        time_t timeSystem3 = getDateSystem(3);
+        time_t timeSystemNow = getDateSystem(); 
+
+        return compareDlu(getDluTimeT(), timeSystemNow) && !compareDlu(getDluTimeT(), timeSystem3);
+    };
 };
 
 #endif

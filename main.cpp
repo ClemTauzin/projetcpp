@@ -75,10 +75,10 @@ int main(){
     while(choix != '0') {
         std::string input = "";
         /**********MENU**************/
-        std::cout << "Faites votre choix : " << std::endl;
+        std::cout << "\nFaites votre choix : " << std::endl;
         std::cout << "1 - Afficher le contenu du frigo " << std::endl;
         std::cout << "2 - Afficher les recettes " << std::endl;
-        std::cout << "3 -   Montrer les recettes avec les aliments presque périmée" << std::endl;
+        std::cout << "3 - Montrer les recettes avec les aliments presque périmée" << std::endl;
         std::cout << "4 - Cuisiner une recette" << std::endl;
         std::cout << "5 - Gestion du frigo" << std::endl;
         std::cout << "0 - Quitter" << std::endl;
