@@ -29,6 +29,21 @@ struct Recipie{
     }
 };
 
+/**
+template<typename T>
+class VectorNameWrapper{
+
+    std::vector<T*> vector;
+    std::string name;
+
+public:
+    VectorNameWrapper(std::string name, std::vector<T*> vector)
+        :name(name),vector(vector){}
+
+    std::vector<T*> getVector(){return vector;}
+    std::string getName(){return name;}
+};
+*/
 
 
 //using Recipie = std::vector<Food *>;
@@ -40,20 +55,13 @@ class RecipieManager
      * @brief recipies
      */
     std::list<Recipie*> recipies;
+    // std::list<VectorNameWrapper<Food>*> recipies; // test with wrapper
 
 public:
-    /**
-     * @brief C
-     */
+
     RecipieManager();
 
-    /**
-     * @brief addRecipie
-     * @param name
-     * @param recipieListFood
-     */
     void addRecipie(std::string name, std::vector<Food *> recipieListFood);
-    // void addRecipies(const Recipie& recipie);
 
     void findRecipieWithOneFood(std::string food);
 
@@ -67,6 +75,7 @@ public:
             os << r->getName() << " :  ";
             // And in the recipie, for each ingredient, I print the food name
             for(auto &f : r->getFoodList()) {
+            // for(auto &f : r->getVector()) { // test with wrapper
                 os << f->getName()<< " + ";
             }
             os << "\n";

@@ -48,6 +48,7 @@ void RecipieManager::addRecipie(std::string name,
 void RecipieManager::findRecipieWithOneFood(std::string food){
     for(auto& r : recipies){
         auto foodList = r->getFoodList();
+        // auto foodList = r->getVector(); // test with wrapper
         for(auto& f : foodList ){
             if(f->getName() == food){
                 std::cout << "With this food " << food
@@ -67,6 +68,7 @@ std::list<Recipie*> RecipieManager::getPossibleRecipies(std::vector<Food*> foodL
     for(auto &recipie : recipies){
         // I get the food list for this recipie
         auto foodListInRecipie = recipie->getFoodList();
+        // auto foodListInRecipie = recipie->getVector(); // test with wrapper
         // I catch the number of ingredient in this recipie
         int recipieFoodNumber = foodListInRecipie.size();
         int recipieFoodCounter = 0;
@@ -76,14 +78,14 @@ std::list<Recipie*> RecipieManager::getPossibleRecipies(std::vector<Food*> foodL
             // For each ingredient in this recipie
             for(auto &foodInRecipie : foodListInRecipie){
                 if(foodInFridge->getName() == foodInRecipie->getName()){
-                    std::cout << "In recipie : " << recipie->getName()
+                    std::cout << "\tIn recipie : " << recipie->getName()
                               << ", found in fridge " << foodInFridge->getName()
                               << " which can be top for this recipie..." << std::endl;
                     recipieFoodCounter++;
                 }
                 // If we have all ingredient from the fridge to complete the recipie OK
                 if(recipieFoodCounter == recipieFoodNumber){
-                    std::cout << "For recipie : " << recipie->getName() << " : I have all ingredients !" << std::endl;
+                    std::cout << "YES : For recipie : " << recipie->getName() << " : I have all ingredients !" << std::endl;
                     possibleRecipies.push_back(recipie);
                     foundRecipie = true;
                     break;
