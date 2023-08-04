@@ -18,7 +18,11 @@ void Controller::displayReceip() {
     std::list<Recipie*> possibleRecipies = recipieManager->getPossibleRecipies(frigo->getFoods());
 
     for( auto r : possibleRecipies){
-        std::cout << "Possible recipie : " << r->getName() << std::endl;
+        std::cout << "Possible recipe : " << r->getName() << " avec les aliments suivants : ";
+        for(auto f : r->getFoodList()){
+        std::cout<< f->getName()<< ", ";
+        }
+        std::cout<<std::endl;
     }
 }
 
@@ -32,7 +36,6 @@ void Controller::displayFoodNearExpire() {
 }
 
 void Controller::saveFrigo() {
-    std::cout << "EN ATTENTE SAUVEGARDE" << std::endl;
     archivageFrigo(frigo);
 }
 

@@ -77,14 +77,10 @@ std::list<Recipie*> RecipieManager::getPossibleRecipies(std::vector<Food*> foodL
             // For each ingredient in this recipie
             for(auto &foodInRecipie : foodListInRecipie){
                 if(foodInFridge->getName() == foodInRecipie->getName()){
-                    std::cout << "\tIn recipe : " << recipie->getName()
-                              << ", found in fridge " << foodInFridge->getName()
-                              << " which can be top for this recipie..." << std::endl;
                     recipieFoodCounter++;
                 }
                 // If we have all ingredient from the fridge to complete the recipie OK
                 if(recipieFoodCounter == recipieFoodNumber){
-                    std::cout << "YES : For recipe : " << recipie->getName() << " : I have all ingredients !" << std::endl;
                     possibleRecipies.push_back(recipie);
                     foundRecipie = true;
                     break;
