@@ -41,11 +41,8 @@ bool  Food::isFoodExpired(time_t tfood, time_t tSystem) {
     double diff = difftime(tfood, tSystem);
 
     if (diff <= 0) {
-        std::cout << "Aliment périmé" << std::endl;
         return true;
     }
-
-    std::cout << "Aliment goutu" << std::endl;
     return false;
 }
 
