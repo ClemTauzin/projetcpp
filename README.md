@@ -27,6 +27,10 @@ Les notions suivantes ont été réexploitées dans cet exercice :
 - conditions et boucles
 - écriture et lecture de fichier
 
+### Diagramme UML de l'existant : 
+
+![Texte alternatif](diagramme_classe.jpg "Diagramme de classe")
+
 ## @version future - update :
 - listing des recettes enregistrées
 - ajout de recettes
