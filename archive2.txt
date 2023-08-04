@@ -2,3 +2,7 @@ food1;Vegetables;Patate;2024/08/15;France
 food2;Fruit;Poire;2023/07/16;Danemark
 food3;Meat;Rumsteak;2023/08/15;Spain
 food4;Vegetables;Tomato;2023/08/24;France
+food5;Vegetables;Onion;2023/08/15;France;
+food6;Fruit;Peer;2023/08/15;Panam;
+food7;Meat;Kebab;2023/08/15;France;
+food8;Meat;Magret;2023/08/15;Toulouse;

@@ -9,14 +9,6 @@
 #include "meat.h"
 #include "food.h"
 
-// std::ofstream& operator <<(std::ofstream& os, const Frigo& frigo)
-// {
-//     for(auto &f : frigo.foods) {
-//     os << f->getName() << " ; " << f->getDlu()<< " ; " << f->getOrigin() << "\n";
-//     }
-//     return os;
-// };
-
 void archivageFrigo(Frigo* frigo){
     std::ofstream frigoContainer;
     frigoContainer.open("archive.txt", std::ios::out);
@@ -40,26 +32,14 @@ void archivageFrigo(Frigo* frigo){
     std::cout<<"--- Frigo food successfully saved ---"<<std::endl;
 };
 
-// void archivageFrigo(Frigo* frigo){
-//     std::ofstream frigoContainer;
-//     frigoContainer.open("archive.txt", std::ios::out);
-//     int i = 0;
-//     for(auto &f : frigo->getFoods()) {
-//         i++;
-//         frigoContainer <<"Food* food"<<i<< " = new ";
-//         Vegetables* vegetable = dynamic_cast<Vegetables*>(f);
-//         Meat* meat = dynamic_cast<Meat*>(f);
-//         Fruit* fruit = dynamic_cast<Fruit*>(f);
-//         if(vegetable){
-//             frigoContainer << "Vegetables(";
-//         }else if(meat){
-//             frigoContainer << "Meat(";
-//         }else{
-//             frigoContainer << "Fruit(";
-//         }
-//     frigoContainer <<"\""<< f->getName() <<"\",\""<< f->getDlu()<<"\",\""<< f->getOrigin() << "\");"<<std::endl;
-//     }
-// };
+void suppressExpiredFood(Food* i,Frigo* frigo ){
+    if(i->isDluOver()){
+        std::cout<<i->getName()<< " DLU is expired -> Put in the garbage"<<std::endl;
+        delete i;
+    }else{
+    frigo->addFood(i);
+    }
+};
 
 void fillFrigo(Frigo* frigo){
     std::ifstream stream;
@@ -84,15 +64,17 @@ while (std::getline (stream,line,';'))
 
     if(in_class == "Vegetables"){
         Food* i = new Vegetables(in_name, in_dlu, in_origin);
-        frigo->addFood(i);
+        suppressExpiredFood(i, frigo);   
     }else if(in_class == "Meat"){
         Food* i = new Meat(in_name, in_dlu, in_origin);
-        frigo->addFood(i);
+        suppressExpiredFood(i, frigo);   
     }else{
         Food* i = new Fruit(in_name, in_dlu, in_origin);
-        frigo->addFood(i);
+        suppressExpiredFood(i, frigo);   
     }
 }
     stream.close();
-    std::cout<<"--- Frigo food successfully filled ---"<<std::endl;
+    
+std::cout<<"---- Expired foods removed ----"<<std::endl;
+std::cout<<"--- Frigo food successfully filled ---"<<std::endl;
 }

@@ -5,8 +5,9 @@
 #include "frigo.h"
 #include "food.h"
 #include "vegetables.h"
-#include "Fruit.h"
-#include "Meat.h"
+#include "fruit.h"
+#include "meat.h"
+#include "archivage.h"
 
 class Controller {
 private:

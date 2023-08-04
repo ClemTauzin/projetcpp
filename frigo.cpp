@@ -6,6 +6,7 @@ void Frigo::addFood(Food* aFood) {
 }
 
 void Frigo::displayAllFoods() {
+    std::cout<<"\nVotre frigo contient les produits suivants :"<<std::endl;
     for(auto &f : foods) {
         f->displayInfo();
     }
