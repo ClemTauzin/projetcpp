@@ -24,13 +24,13 @@ public:
         Initialisation de l'application.
         Chargement des aliments du frigo
     */
-    void initFrigo();
+    void createFrigo();
 
     void displayFrigo();
     void displayReceip();
     void saveFrigo();
 
-
+    ~Controller();
 };
 
 #endif

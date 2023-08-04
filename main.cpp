@@ -69,7 +69,7 @@ int main(){
 
 
     Controller controller;
-    controller.initFrigo();
+    controller.createFrigo();
 
     char choix = '_';
     while(choix != '0') {
@@ -77,10 +77,10 @@ int main(){
         /**********MENU**************/
         std::cout << "\nFaites votre choix : " << std::endl;
         std::cout << "1 - Afficher le contenu du frigo " << std::endl;
-        std::cout << "2 - Afficher les recettes " << std::endl;
-        std::cout << "3 - Montrer les recettes avec les aliments presque périmée" << std::endl;
-        std::cout << "4 - Cuisiner une recette" << std::endl;
-        std::cout << "5 - Gestion du frigo" << std::endl;
+        std::cout << "2 - Afficher les recettes en fonction du contenu du frigo" << std::endl;
+        std::cout << "3 - Afficher les aliments presque périmés" << std::endl;
+        std::cout << "4 - Gestion du frigo" << std::endl;
+        // std::cout << "5 - Cuisiner une recette" << std::endl; ??
         std::cout << "0 - Quitter" << std::endl;
         std::cin >> input;
         choix = input[0];
@@ -96,13 +96,13 @@ int main(){
                 controller.displayReceip();
                 break;
             case '4':
-                //Choisir la recette
-                // ET supprimer les ingrédients du frigo
-                break;
-            case '5':
                 // Ajouter un aliment
                 // Supprimer un aliment
                 break;
+            // case '5':
+            //     Choisir la recette
+            //     ET supprimer les ingrédients du frigo
+            //     break;
             default:
                 std::cout << "Choix non reconnu" << std::endl;
         }

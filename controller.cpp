@@ -1,7 +1,7 @@
 #include "controller.h"
 
 
-void Controller::initFrigo() {
+void Controller::createFrigo() {
     frigo = new Frigo();
     fillFrigo(frigo);
 }
