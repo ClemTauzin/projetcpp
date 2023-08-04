@@ -28,6 +28,7 @@ public:
 
     void displayFrigo();
     void displayReceip();
+    void displayFoodNearExpire();
     void saveFrigo();
 
     ~Controller();

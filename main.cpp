@@ -95,6 +95,8 @@ int main(){
             case '2':
                 controller.displayReceip();
                 break;
+            case '3':
+                controller.displayFoodNearExpire();
             case '4':
                 // Ajouter un aliment
                 // Supprimer un aliment
