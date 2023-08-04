@@ -10,29 +10,29 @@ Vous allez devoir imaginer un contexte pertinent dans lequel vous allez mettre e
 *********************************************************
 
  @version 1.0 :
-        - L'aplication charge les aliments du fichier sauvegardé lors du démarrage, tout en prenant soin d'éliminer les aliments périmés, et sauvegarde le contenu du frigo lors de la fermeture de l'application
-        - l'utilisateur se voit proposé 
-                    - d'afficher les aliments contenus dans le frigo
-                    - d'afficher les recettes réalisables à partir des aliments contenus dans le frigo
-                    - d'afficher la liste des aliments bientôt périmés contenus dans le frigo
-                    - d'ajouter des aliments dans le frigo
-                    - de supprimer des aliments contenus dans le frigo
+        * L'aplication charge les aliments du fichier sauvegardé lors du démarrage, tout en prenant soin d'éliminer les aliments périmés, et sauvegarde le contenu du frigo lors de la fermeture de l'application
+        * l'utilisateur se voit proposé 
+                    * d'afficher les aliments contenus dans le frigo
+                    * d'afficher les recettes réalisables à partir des aliments contenus dans le frigo
+                    * d'afficher la liste des aliments bientôt périmés contenus dans le frigo
+                    * d'ajouter des aliments dans le frigo
+                    * de supprimer des aliments contenus dans le frigo
 
 Le but de l'exercice était de mettre en pratique différentes notions vues lors de la formation C++
 Les notions suivantes ont été réexploitées dans cet exercice :
-    - classe abstaite / classe dérivée
-    - vecteurs et pointeurs
-    - dynamic cast
-    - conditions et boucles
-    - écriture et lecture de fichier
+    * classe abstaite / classe dérivée
+    * vecteurs et pointeurs
+    * dynamic cast
+    * conditions et boucles
+    * écriture et lecture de fichier
 
 @version future - update :
-        - listing des recettes enregistrées
-        - ajout de recettes
-        - suppression des aliments du frigo correspondant à une recette lorsque celle ci est réalisée
-        - réalisation d'un fichier enregistrant les recettes réalisées, la date de réalisation et les aliments utilisés à cette occasion
-        - prise en compte des erreurs utilisateurs lors de la saisie des données / vision pessimiste
-        - (réalisation d'un système d'achat fictif de ressources + possibilité d'obtenir un coup de revient d'un plat en prenant en compte de prix des aliments utilisés)
+        * listing des recettes enregistrées
+        * ajout de recettes
+        * suppression des aliments du frigo correspondant à une recette lorsque celle ci est réalisée
+        * réalisation d'un fichier enregistrant les recettes réalisées, la date de réalisation et les aliments utilisés à cette occasion
+        * prise en compte des erreurs utilisateurs lors de la saisie des données / vision pessimiste
+        * (réalisation d'un système d'achat fictif de ressources + possibilité d'obtenir un coup de revient d'un plat en prenant en compte de prix des aliments utilisés)
 
  
   To compile, enter the following command : g++ -std=c++11 *.cpp
