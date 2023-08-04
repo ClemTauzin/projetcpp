@@ -8,7 +8,7 @@ void Controller::initFrigo() {
     Food* food3 = new Meat("Rumsteak","2023/07/03","Spain");
     Food* food4 = new Meat("testNear01","2023/08/07","Spain");
     Food* food5 = new Meat("testNear02","2023/08/08","Spain");
-    Food* food6 = new Meat("testNear02","2023/08/10","Spain");
+    Food* food6 = new Meat("testNear03","2023/08/20","Spain");
 
 
     frigo->addFood(food1);
@@ -19,14 +19,9 @@ void Controller::initFrigo() {
     frigo->addFood(food6);
 
 
-    food1->isDluOver();
+    /*food1->isDluOver();
     food2->isDluOver();
-    food3->isDluOver();
-    std::cout << "Test near" << std::endl;
-    food4->isDluNear();
-    food5->isDluNear();
-    food6->isDluNear();
-
+    food3->isDluOver();*/
 }
 
 void Controller::displayFrigo() {
