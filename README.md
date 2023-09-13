@@ -1,7 +1,7 @@
 # PROJET C++ 
 # APPLICATION DE GESTION DE FRIGO
 
- @authors  Jia Jiunn Huynh - Olivier Wafflard - Clement Tauzin
+ @authors  Jia - Olivier Wafflard - Clement Tauzin
  @date 2023/08/04
 
 **Utilisation de github** : https://github.com/ClemTauzin/projetcpp
